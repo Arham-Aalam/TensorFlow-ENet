@@ -56,8 +56,8 @@ logdir = FLAGS.logdir
 checkpoint_file = tf.train.latest_checkpoint(checkpoint_dir)
 
 #Dataset directories
-image_files = sorted([os.path.join(dataset_dir, 'test', file) for file in os.listdir(dataset_dir + "/test") if file.endswith('.png')])
-annotation_files = sorted([os.path.join(dataset_dir, "testannot", file) for file in os.listdir(dataset_dir + "/testannot") if file.endswith('.png')])
+image_files = sorted([os.path.join(dataset_dir, 'test', file) for file in os.listdir(dataset_dir + "/test") if file.endswith('.jpg')])
+annotation_files = sorted([os.path.join(dataset_dir, "testannot", file) for file in os.listdir(dataset_dir + "/testannot") if file.endswith('.jpg')])
 
 num_batches_per_epoch = len(image_files) / batch_size
 num_steps_per_epoch = num_batches_per_epoch

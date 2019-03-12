@@ -4,7 +4,7 @@ from scipy.misc import imread
 import ast
 
 image_dir = "./dataset/trainannot"
-image_files = [os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith('.png')]
+image_files = [os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith('.jpg')]
 
 def ENet_weighing(image_files=image_files, num_classes=2):
     '''

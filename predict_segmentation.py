@@ -8,7 +8,7 @@ import numpy as np
 slim = tf.contrib.slim
 
 image_dir = './dataset/test/'
-images_list = sorted([os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith('.png')])
+images_list = sorted([os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith('.jpg')])
 
 checkpoint_dir = "./checkpoint_mfb"
 checkpoint = tf.train.latest_checkpoint(checkpoint_dir)
@@ -116,5 +116,5 @@ with tf.Graph().as_default() as graph:
                 print 'Saving image %s/%s' %(i*10 + j, len(images_list))
                 plt.axis('off')
                 plt.imshow(converted_image)
-                imsave(photo_dir + "/image_%s.png" %(i*10 + j), converted_image)
+                imsave(photo_dir + "/image_%s.jpg" %(i*10 + j), converted_image)
                 # plt.show()
