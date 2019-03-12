@@ -6,7 +6,7 @@ import ast
 image_dir = "./dataset/trainannot"
 image_files = [os.path.join(image_dir, file) for file in os.listdir(image_dir) if file.endswith('.png')]
 
-def ENet_weighing(image_files=image_files, num_classes=12):
+def ENet_weighing(image_files=image_files, num_classes=2):
     '''
     The custom class weighing function as seen in the ENet paper.
 
