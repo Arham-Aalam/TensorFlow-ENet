@@ -63,7 +63,7 @@ def median_frequency_balancing(image_files=image_files, num_classes=12):
     '''
     #Initialize all the labels key with a list value
     label_to_frequency_dict = {}
-    for i in xrange(num_classes):
+    for i in range(num_classes):
         label_to_frequency_dict[i] = []
 
     for n in xrange(len(image_files)):
