@@ -19,14 +19,14 @@ def ENet_weighing(image_files=image_files, num_classes=2):
     '''
     #initialize dictionary with all 0
     label_to_frequency = {}
-    for i in xrange(num_classes):
+    for i in range(num_classes):
         label_to_frequency[i] = 0
 
-    for n in xrange(len(image_files)):
+    for n in range(len(image_files)):
         image = imread(image_files[n])
 
         #For each label in each image, sum up the frequency of the label and add it to label_to_frequency dict
-        for i in xrange(num_classes):
+        for i in range(num_classes):
             class_mask = np.equal(image, i)
             class_mask = class_mask.astype(np.float32)
             class_frequency = np.sum(class_mask)
@@ -66,11 +66,11 @@ def median_frequency_balancing(image_files=image_files, num_classes=12):
     for i in range(num_classes):
         label_to_frequency_dict[i] = []
 
-    for n in xrange(len(image_files)):
+    for n in range(len(image_files)):
         image = imread(image_files[n])
 
         #For each image sum up the frequency of each label in that image and append to the dictionary if frequency is positive.
-        for i in xrange(num_classes):
+        for i in range(num_classes):
             class_mask = np.equal(image, i)
             class_mask = class_mask.astype(np.float32)
             class_frequency = np.sum(class_mask)
