@@ -92,12 +92,12 @@ decay_steps = int(num_epochs_before_decay * num_steps_per_epoch)
 #Median frequency balancing class_weights
 if weighting == "MFB":
     class_weights = median_frequency_balancing()
-    print "========= Median Frequency Balancing Class Weights =========\n", class_weights
+    print ("========= Median Frequency Balancing Class Weights =========\n", class_weights)
 
 #Inverse weighing probability class weights
 elif weighting == "ENET":
     class_weights = ENet_weighing()
-    print "========= ENet Class Weights =========\n", class_weights
+    print ("========= ENet Class Weights =========\n", class_weights)
 
 #============= TRAINING =================
 def weighted_cross_entropy(onehot_labels, logits, class_weights):

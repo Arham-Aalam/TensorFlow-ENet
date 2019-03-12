@@ -58,7 +58,7 @@ if not os.path.exists(photo_dir):
 
 #Create a function to convert each pixel label to colour.
 def grayscale_to_colour(image):
-    print 'Converting image...'
+    print ('Converting image...')
     image = image.reshape((360, 480, 1))
     image = np.repeat(image, 3, axis=-1)
     for i in xrange(image.shape[0]):
@@ -97,7 +97,7 @@ with tf.Graph().as_default() as graph:
 
     predictions = tf.argmax(probabilities, -1)
     predictions = tf.cast(predictions, tf.float32)
-    print 'HERE', predictions.get_shape()
+    print ('HERE', predictions.get_shape())
 
     sv = tf.train.Supervisor(logdir=None, init_fn=restore_fn)
     
@@ -113,7 +113,7 @@ with tf.Graph().as_default() as graph:
                     break
 
                 converted_image = grayscale_to_colour(segmentations[j])
-                print 'Saving image %s/%s' %(i*10 + j, len(images_list))
+                print ('Saving image %s/%s' %(i*10 + j, len(images_list)))
                 plt.axis('off')
                 plt.imshow(converted_image)
                 imsave(photo_dir + "/image_%s.jpg" %(i*10 + j), converted_image)
